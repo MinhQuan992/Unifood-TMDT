@@ -1,0 +1,104 @@
+#title {
+    text-align: center;
+    padding-top: 1%;
+}
+
+#detail {
+    margin-left: 18%;
+    padding-top: 1%;
+}
+
+#products {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 60%;
+}
+
+#products td, #products th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#products tr:nth-child(even){background-color: #f2f2f2;}
+
+#products tr:hover {background-color: #ddd;}
+
+#products th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.image {
+    width: 50%;
+    margin-left: 23%;
+}
+
+#link-order {
+    color: blue;
+    font-size: 14px;
+}
+
+#link-order:hover {
+    text-decoration: underline;
+    color: red;
+    background-color: white;
+}
+
+.frmEdit {
+    float: left;
+}
+
+#btnDuyet, #btnNhan {
+    border: 2px solid blue;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 110%;
+    height: 7%;
+    color: blue;
+    background-color: white;
+}
+
+#btnDuyet:hover, #btnNhan:hover {
+    cursor: pointer;
+    color: white;
+    background-color: blue;
+}
+
+#btnHuy {
+    border: 2px solid red;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 110%;
+    height: 7%;
+    color: red;
+    background-color: white;
+    margin-left: 30%;
+}
+
+#btnHuy:hover {
+    cursor: pointer;
+    color: white;
+    background-color: red;
+}
+
+#btnBanGiaoVanChuyen, #btnDaGiao {
+    border: 2px solid #1f8c23;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 20px;
+    width: 110%;
+    height: 7%;
+    color: #2a942e;
+    background-color: white;
+}
+
+#btnBanGiaoVanChuyen:hover, #btnDaGiao:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #2a942e;
+}
