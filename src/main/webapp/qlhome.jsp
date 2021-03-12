@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>MANAGER</title>
+    <title>Quản lý | Unifood</title>
     <meta name="description" content="Quan Com Online Unifood" />
     <meta name="author" content="NhomHQNT">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -26,8 +26,8 @@
 
 <div id="container">
     <nav style="background-color: #60150c;" class="navbar navbar-expand-sm">
-        <a href="#"><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
-        <a class="homelogo" href="index.jsp"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
+        <a><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
+        <a class="homelogo"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
         <ul class="navbar-nav">
             <li class="nav-item active"><a class="nav-link" href="qlhome.jsp">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="staffs.jsp">STAFFS</a></li>
@@ -40,23 +40,26 @@
                 </div></li>
         </ul>
     </nav>
+</div>
 
+<div id="buttonevent">
+    <br>
     <form id="editPro" method="post" action="${pageContext.request.contextPath}/getPro">
-        <input type="submit" style="color: #60150c" value="Chỉnh sửa sản phẩm">
-    </form>
+        <input type="submit" style="color: #60150c; width: 250px" value="Chỉnh sửa sản phẩm">
+    </form><br>
 
     <form id="addPro" method="post" action="${pageContext.request.contextPath}/addPro.jsp">
-        <input type="submit" style="color: #60150c" value="Thêm sản phẩm">
-    </form>
+        <input type="submit" style="color: #60150c ; width: 250px" value="Thêm sản phẩm">
+    </form><br>
 
     <form id="ManageOder" method="get" action="${pageContext.request.contextPath}/GetAllOrders">
         <input type="hidden" name="category" value="Đã tiếp nhận">
-        <input type="submit" style="color: #60150c" value="Quản lí đơn hàng">
-    </form>
+        <input type="submit" style="color: #60150c; width: 250px" value="Quản lí đơn hàng">
+    </form><br>
 
     <form id="addMan" method="post" action="${pageContext.request.contextPath}/signup.jsp">
-        <input type="submit" style="color: #60150c" value="Thêm Quản Lý">
-    </form>
+        <input type="submit" style="color: #60150c; width: 250px" value="Thêm Quản Lý">
+    </form><br>
 </div>
 
 <div id="footer">

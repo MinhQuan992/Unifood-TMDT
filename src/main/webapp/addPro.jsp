@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Thêm sản phẩm</title>
+    <title>Thêm sản phẩm | Unifood</title>
     <meta name="description" content="Quan Com Online Unifood" />
     <meta name="author" content="NhomHQNT">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -40,7 +40,7 @@
 <div id="container">
     <nav style="background-color: #60150c;" class="navbar navbar-expand-sm">
         <a href="#"><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
-        <a class="homelogo" href="index.jsp"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
+        <a class="homelogo"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
         <ul class="navbar-nav">
             <li class="nav-item active"><a class="nav-link" href="qlhome.jsp">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="staffs.jsp">STAFFS</a></li>
@@ -48,21 +48,21 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">${User.hoVaTen}</a>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item dropdown-item-custom" href="${pageContext.request.contextPath}/ManageWarehouse">My Profile</a>
+                    <a class="dropdown-item dropdown-item-custom" href="${pageContext.request.contextPath}/EditInfo">My Profile</a>
                     <a class="dropdown-item dropdown-item-custom" href="${pageContext.request.contextPath}/signout">Sign Out</a>
                 </div></li>
         </ul>
     </nav>
-    <div id="procontainer" style="align: center;">
-        <form id="addcontainer" method="post" action="${pageContext.request.contextPath}/addPro">
+    <div align="center">
+        <form id="addcontainer" style="margin-top: 2%" method="post" action="${pageContext.request.contextPath}/addPro">
             <table>
                 <tr>
-                    <td><b> Mã Sản Phẩm: </b></td>
+                    <td><b> Mã sản phẩm: </b></td>
                     <td>
-                        <input type="text" name="maSanPham"
+                        <input type="text" name="maSanPham" class="text-input"
                         <c:choose>
                         <c:when test="${empty maSanPham}">
-                               placeholder="Nhập mã Sản Phẩm"
+                               placeholder="Nhập mã SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${maSanPham}"/> "
@@ -77,12 +77,12 @@
                 </tr>
 
                 <tr>
-                    <td><b>Tên Sản Phẩm: </b></td>
+                    <td><b>Tên sản phẩm: </b></td>
                     <td>
-                        <input type="text" name="tenSanPham"
+                        <input type="text" name="tenSanPham" class="text-input"
                         <c:choose>
                         <c:when test="${empty tenSanPham}">
-                               placeholder="Nhập tên Sản Phẩm"
+                               placeholder="Nhập tên SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${tenSanPham}"/> "
@@ -99,10 +99,10 @@
                 <tr>
                     <td><b> Đơn giá: </b></td>
                     <td>
-                        <input type="text" name="donGia"
+                        <input type="text" name="donGia" class="text-input"
                         <c:choose>
                         <c:when test="${empty donGia}">
-                               placeholder="Nhập giá Sản Phẩm"
+                               placeholder="Nhập đơn giá SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${donGia}"/> "
@@ -117,12 +117,12 @@
                 </tr>
 
                 <tr>
-                    <td><b> Đơn vị tính của Sản Phẩm: </b></td>
+                    <td><b> Đơn vị tính: </b></td>
                     <td>
-                        <input type="text" name="donViTinh"
+                        <input type="text" name="donViTinh" class="text-input"
                         <c:choose>
                         <c:when test="${empty donViTinh}">
-                               placeholder="Nhập đơn vị tính của Sản Phẩm"
+                               placeholder="Nhập đơn vị tính của SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${donViTinh}"/> "
@@ -137,12 +137,12 @@
                 </tr>
 
                 <tr>
-                    <td><b> Số lượng của Sản Phẩm: </b></td>
+                    <td><b> Số lượng: </b></td>
                     <td>
-                        <input type="text" name="soLuong"
+                        <input type="text" name="soLuong" class="text-input"
                         <c:choose>
                         <c:when test="${empty soLuong}">
-                               placeholder="Nhập số lượng của Sản Phẩm"
+                               placeholder="Nhập số lượng SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${soLuong}"/> "
@@ -158,12 +158,12 @@
 
 
                 <tr>
-                    <td><b> Hình ảnh Sản Phẩm: </b></td>
+                    <td><b> Hình ảnh: </b></td>
                     <td>
-                        <input type="text" name="anhMinhHoa"
+                        <input type="text" name="anhMinhHoa" class="text-input"
                         <c:choose>
                         <c:when test="${empty anhMinhHoa}">
-                               placeholder="Nhập url hình ảnh Sản Phẩm"
+                               placeholder="Nhập URL hình ảnh SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${anhMinhHoa}"/> "
@@ -172,58 +172,49 @@
                         <c:if test="${not empty anhMinhHoaError}">
                                style="border-color: #60150c"
                         </c:if>
-                               required>
+                               >
                     </td>
                     <td><c:out value="${anhMinhHoaError}"/></td>
                 </tr>
 
                 <tr>
-                    <td><b> Mã nhóm của Sản Phẩm: </b></td>
+                    <td><b> Nhóm sản phẩm: </b></td>
                     <td>
-                        <input type="text" name="maNhom"
-                        <c:choose>
-                        <c:when test="${empty maNhom}">
-                               placeholder="Nhập mã nhóm của Sản Phẩm"
-                        </c:when>
-                        <c:otherwise>
-                               value="<c:out value="${maNhom}"/> "
-                        </c:otherwise>
-                        </c:choose>
-                        <c:if test="${not empty maNhomError}">
-                               style="border-color: #60150c"
-                        </c:if>
-                               required>
+                        <select name="maNhom">
+                            <option value="1" <c:if test="${maNhom == '1'}">selected</c:if>>Cơm</option>
+                            <option value="2" <c:if test="${maNhom == '2'}">selected</c:if>>Món bún, phở, mì</option>
+                            <option value="3" <c:if test="${maNhom == '3'}">selected</c:if>>Bánh mì</option>
+                            <option value="4" <c:if test="${maNhom == '4'}">selected</c:if>>Bánh mặn</option>
+                            <option value="5" <c:if test="${maNhom == '5'}">selected</c:if>>Bánh ngọt</option>
+                            <option value="6" <c:if test="${maNhom == '6'}">selected</c:if>>Thức ăn nhanh</option>
+                            <option value="7" <c:if test="${maNhom == '7'}">selected</c:if>>Nước suối</option>
+                            <option value="8" <c:if test="${maNhom == '8'}">selected</c:if>>Nước ngọt</option>
+                            <option value="10" <c:if test="${maNhom == '10'}">selected</c:if>>Đồ ăn kèm</option>
+                            <option value="11" <c:if test="${maNhom == '11'}">selected</c:if>>Canh phần</option>
+                            <option value="12" <c:if test="${maNhom == '12'}">selected</c:if>>Nước giải khát</option>
+                        </select>
                     </td>
-                    <td><c:out value="${maNhomError}"/></td>
                 </tr>
 
                 <tr>
-                    <td><b> Mã kho của Sản Phẩm: </b></td>
+                    <td><b> Kho hàng: </b></td>
                     <td>
-                        <input type="text" name="maKho"
-                        <c:choose>
-                        <c:when test="${empty maKho}">
-                               placeholder="Nhập mã kho của Sản Phẩm"
-                        </c:when>
-                        <c:otherwise>
-                               value="<c:out value="${maKho}"/> "
-                        </c:otherwise>
-                        </c:choose>
-                        <c:if test="${not empty maKhoError}">
-                               style="border-color: #60150c"
-                        </c:if>
-                               required>
+                        <select name="maKho">
+                            <option value="KHOHANG01" <c:if test="${maKho == 'KHOHANG01'}">selected</c:if>>Kho hàng trụ sở chính HCMUTE</option>
+                            <option value="KHOHANG02" <c:if test="${maKho == 'KHOHANG02'}">selected</c:if>>Kho hàng phụ HCMUTE</option>
+                            <option value="KHOHANG03" <c:if test="${maKho == 'KHOHANG03'}">selected</c:if>>Kho hàng dự phòng</option>
+                            <option value="KHOHANG04" <c:if test="${maKho == 'KHOHANG04'}">selected</c:if>>Kho hàng Quận 9</option>
+                        </select>
                     </td>
-                    <td><c:out value="${maKhoError}"/></td>
                 </tr>
 
                 <tr>
-                    <td><b> Mô tả Sản Phẩm: </b></td>
+                    <td><b> Mô tả: </b></td>
                     <td>
-                        <input type="text" name="moTa"
+                        <input type="text" name="moTa" class="text-input"
                         <c:choose>
                         <c:when test="${empty moTa}">
-                               placeholder="Nhập mô tả Sản Phẩm"
+                               placeholder="Nhập mô tả SP"
                         </c:when>
                         <c:otherwise>
                                value="<c:out value="${moTa}"/> "
@@ -232,12 +223,12 @@
                         <c:if test="${not empty moTaError}">
                                style="border-color: #60150c"
                         </c:if>
-                               required>
+                               >
                     </td>
                     <td><c:out value="${moTaError}"/></td>
                 </tr>
             </table>
-
+            <br>
             <input type="submit" style="text-align: center; background-color: #60150c; text-decoration-color: white" value="Xác nhận">
         </form>
     </div>

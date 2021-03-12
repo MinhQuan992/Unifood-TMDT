@@ -16,7 +16,7 @@
 %>
 <html>
 <head>
-    <title>Manage Order</title>
+    <title>Cập nhật đơn hàng | Unifood</title>
     <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>

@@ -151,11 +151,10 @@ a.dropdown-item-custom:active{
     background-position: center;
 }
 
-/*chỉnh giao diện*/
+/*chỉnh giao diện
 #editPro{
     font-family: SVN-Zero;
     font-size: 25px;
-    background-color: #60150c;
     text-decoration-color: #E6E6E6;
     text-align: center;
 }
@@ -163,10 +162,9 @@ a.dropdown-item-custom:active{
 #addPro{
     font-family: SVN-Zero;
     font-size: 25px;
-    background-color: #60150c;
     text-decoration-color: #E6E6E6;
     text-align: center;
-}
+}/
 
 /*San pham*/
 .glyphicon{
@@ -222,4 +220,17 @@ a.dropdown-item-custom:active{
 .form-control {
     height: auto;
     width: auto;
+}
+
+/*Nhóm button*/
+#buttonevent
+{
+    font-family: SVN-Zero;
+    font-size: 25px;
+    text-decoration-color: #E6E6E6;
+    text-align: center;
+}
+
+.text-input {
+    width: 200px;
 }

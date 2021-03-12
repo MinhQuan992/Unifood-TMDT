@@ -33,7 +33,7 @@ public class EditDetailController extends HttpServlet {
         boolean haserror = false;
         int donGiaNum = 0;
         int soLuongNum = 0;
-        short maNhomNum = 0;
+        short maNhomNum = (short)Integer.parseInt(maNhom);
 
         Pattern numPattern = Pattern.compile("\\d+");
         Matcher donGiaMatcher = numPattern.matcher(donGia);
@@ -67,20 +67,6 @@ public class EditDetailController extends HttpServlet {
             }
         }
 
-        if(!maNhomMatcher.matches())
-        {
-            request.setAttribute("maNhomError", "Nhập Số Nguyên Dương");
-            haserror=true;
-        }
-        else {
-            maNhomNum = (short)Integer.parseInt(maNhom);
-            if (maNhomNum == 0 || maNhomNum < 0 || maNhomNum > 99)
-            {
-                haserror=true;
-                request.setAttribute("maNhomError", "Nhập Số Nguyên Dương");
-            }
-        }
-
         if(maSanPham.equals("")) {
             haserror=true;
             request.setAttribute("maSanPhamError", "Nhập mã sản phẩm");
@@ -104,19 +90,7 @@ public class EditDetailController extends HttpServlet {
             request.setAttribute("anhMinhHoaError", "Chọn hình ảnh sản phẩm");
         }
 
-        if(maKho.equals(""))
-        {
-            haserror=true;
-            request.setAttribute("maKhoError", "Nhập Mã Kho của sản phẩm");
-        }
-/*
-        if(moTa.equals(""))
-        {
-            haserror=true;
-            request.setAttribute("moTaError", "Nhập Mô Tả sản phẩm");
-        }
-*/
-        if(haserror==false)
+        if(!haserror)
         {
             SanphamEntity sanphamEntity = new SanphamEntity(maSanPham, tenSanPham, donViTinh, donGiaNum, soLuongNum, anhMinhHoa, maNhomNum, maKho, moTa);
             SanPhamDAO sanPhamDAO = new SanPhamDAO();

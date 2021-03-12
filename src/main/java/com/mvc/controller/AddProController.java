@@ -33,12 +33,11 @@ public class AddProController extends HttpServlet {
         boolean haserror = false;
         int donGiaNum = 0;
         int soLuongNum = 0;
-        short maNhomNum = 0;
+        short maNhomNum = (short) Integer.parseInt(maNhom);
 
         Pattern numPattern = Pattern.compile("\\d+");
         Matcher donGiaMatcher = numPattern.matcher(donGia);
         Matcher soLuongMatcher = numPattern.matcher(soLuong);
-        Matcher maNhomMatcher = numPattern.matcher(maNhom);
 
         if (donGia.equals("")) {
             request.setAttribute("donGiaError", "Nhập Số Nguyên Dương");
@@ -70,25 +69,6 @@ public class AddProController extends HttpServlet {
             }
         }
 
-        if (maNhom.equals(""))
-        {
-            request.setAttribute("maNhomError", "Nhập Số Nguyên Dương");
-            haserror=true;
-        }
-        if(!maNhomMatcher.matches())
-        {
-            request.setAttribute("maNhomError", "Nhập Số Nguyên Dương");
-            haserror=true;
-        }
-        else {
-            maNhomNum = (short)Integer.parseInt(maNhom);
-            if (maNhomNum == 0)
-            {
-                haserror=true;
-                request.setAttribute("maNhomError", "Nhập Số Nguyên Dương");
-            }
-        }
-
         if(maSanPham.equals(""))
         {
             haserror=true;
@@ -108,25 +88,7 @@ public class AddProController extends HttpServlet {
             request.setAttribute("donViTinhError", "Nhập đơn vị của sản phẩm");
         }
 
-        if (anhMinhHoa.equals(""))
-        {
-            haserror=true;
-            request.setAttribute("anhMinhHoaError", "Nhập url hình ảnh");
-        }
-
-        if(maKho.equals(""))
-        {
-            haserror=true;
-            request.setAttribute("maKhoError", "Nhập mã kho của sản phẩm");
-        }
-
-        if (moTa.equals(""))
-        {
-            haserror=true;
-            request.setAttribute("moTaError", "Nhập mô tả sản phẩm");
-        }
-
-        if(haserror==false)
+        if(!haserror)
         {
             SanphamEntity sanphamEntity = new SanphamEntity(maSanPham, tenSanPham, donViTinh, donGiaNum, soLuongNum, anhMinhHoa, maNhomNum, maKho, moTa);
             SanPhamDAO sanPhamDAO = new SanPhamDAO();

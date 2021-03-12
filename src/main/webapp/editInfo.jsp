@@ -11,7 +11,7 @@
 
 <html>
 <head>
-    <title>Edit Info</title>
+    <title>Thay đổi thông tin | Unifood</title>
     <link rel="stylesheet" href="bootstrap.min.css">
     <meta name="description" content="Quan Com Online Unifood" />
     <meta name="author" content="NhomHQNT">
@@ -35,19 +35,30 @@
 <body>
 <div id="container">
     <nav style="background-color: #60150c;" class="navbar navbar-expand-sm">
-        <a href="#"><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
-        <a class="homelogo" href="index.jsp"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
+        <a><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
+        <a class="homelogo"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
         <ul class="navbar-nav">
-            <li class="nav-item active"><a class="nav-link" href="index.jsp">HOME</a></li>
-            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/MainPage?">PRODUCTS</a></li>
-            <li class="nav-item"><a class="nav-link" href="contact.jsp">CONTACTS</a></li>
+            <c:if test="${userType=='Customer'}">
+                <li class="nav-item active"><a class="nav-link" href="index.jsp">HOME</a></li>
+            </c:if>
+            <c:if test="${userType=='Manager'}">
+                <li class="nav-item active"><a class="nav-link" href="qlhome.jsp">HOME</a></li>
+            </c:if>
+            <c:if test="${userType=='Shipper'}">
+                <li class="nav-item active"><a class="nav-link" href="shipperhome.jsp">HOME</a></li>
+            </c:if>
         </ul>
     </nav>
 <c:if test="${not empty authorize}">
     <div class="container col-md-8 col-md-offset-3" style="overflow: auto">
         <div class="jumbotron">
             <div class="page-header">
-                <p>Trở về <a href="${pageContext.request.contextPath}/index.jsp">trang chủ</a></p>
+                <c:if test="${userType=='Customer'}">
+                    <p>Trở về <a href="${pageContext.request.contextPath}/index.jsp">trang chủ</a></p>
+                </c:if>
+                <c:if test="${userType=='Manager'}">
+                    <p>Trở về <a href="${pageContext.request.contextPath}/qlhome.jsp">trang chủ</a></p>
+                </c:if>
                 <h1>Thay đổi thông tin người dùng</h1>
                 <p class="text-info"><c:out value="${status}"></c:out></p>
             </div>

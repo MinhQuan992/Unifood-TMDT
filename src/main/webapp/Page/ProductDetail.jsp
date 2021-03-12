@@ -23,7 +23,7 @@
 %>
 <html>
 <head>
-    <title>Product detail</title>
+    <title>Chi tiết sản phẩm | Unifood</title>
     <link href="${pageContext.request.contextPath}/Style/PDstyle.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Oswald:wght@500&display=swap" rel="stylesheet">

@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Đặt lại mật khẩu | UNIFOOD</title>
+    <title>Đặt lại mật khẩu | Unifood</title>
     <meta name="description" content="Quan Com Online Unifood" />
     <meta name="author" content="NhomHQNT">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -37,8 +37,8 @@
 </c:if>
 <div id="container">
     <nav style="background-color: #60150c;" class="navbar navbar-expand-sm">
-        <a href="#"><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
-        <a class="homelogo" href="#"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
+        <a><img class="logo" src="Images/LOGO.png" style="width: auto; height: 50px;"></a>
+        <a class="homelogo"><img src="Images/homepage_icon.png" style="width: auto; height: 50px;"></a>
         <ul class="navbar-nav">
             <li class="nav-item active"><a class="nav-link" href="index.jsp">HOME</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/MainPage">PRODUCTS</a></li>
