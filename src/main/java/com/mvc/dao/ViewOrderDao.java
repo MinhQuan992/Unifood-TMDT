@@ -39,6 +39,32 @@ public class ViewOrderDao {
 
     public List<ViewDonHangEntity> getAllOrderManager(String orderStatus)
     {
+        switch (orderStatus)
+        {
+            case "Da tiep nhan":
+                orderStatus = "Đã tiếp nhận";
+                break;
+
+            case "Dang xu ly":
+                orderStatus = "Đang xử lý";
+                break;
+
+            case "Ban giao van chuyen":
+                orderStatus = "Bàn giao vận chuyển";
+                break;
+
+            case "Dang van chuyen":
+                orderStatus = "Đang vận chuyển";
+                break;
+
+            case "Giao hang thanh cong":
+                orderStatus = "Giao hàng thành công";
+                break;
+
+            case "Da huy":
+                orderStatus = "Đã hủy";
+                break;
+        }
         Transaction transaction = null;
         List<ViewDonHangEntity> listOfOrder = null;
         Session session = HibernateUtility.getSessionFactory().openSession();

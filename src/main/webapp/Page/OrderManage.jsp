@@ -46,12 +46,12 @@
 </div>
 <form style="margin-left: 10%; padding-top: 2%;" method="get" action="${pageContext.request.contextPath}/GetAllOrders">
     <select name="category" id="category">
-        <option value="Đã tiếp nhận">Đã tiếp nhận</option>
-        <option value="Đang xử lý">Đang xử lý</option>
-        <option value="Bàn giao vận chuyển">Bàn giao vận chuyển</option>
-        <option value="Đang vận chuyển">Đang vận chuyển</option>
-        <option value="Giao hàng thành công">Giao hàng thành công</option>
-        <option value="Đã hủy">Đã hủy</option>
+        <option value="Da tiep nhan">Đã tiếp nhận</option>
+        <option value="Dang xu ly">Đang xử lý</option>
+        <option value="Ban giao van chuyen">Bàn giao vận chuyển</option>
+        <option value="Dang van chuyen">Đang vận chuyển</option>
+        <option value="Giao hang thanh cong">Giao hàng thành công</option>
+        <option value="Da huy">Đã hủy</option>
     </select>
     &nbsp;
     <input id="btnChon" type="submit" value="Chọn">

@@ -53,7 +53,7 @@
     </form><br>
 
     <form id="ManageOder" method="get" action="${pageContext.request.contextPath}/GetAllOrders">
-        <input type="hidden" name="category" value="Đã tiếp nhận">
+        <input type="hidden" name="category" value="Da tiep nhan">
         <input type="submit" style="color: #60150c; width: 250px" value="Quản lí đơn hàng">
     </form><br>
 
